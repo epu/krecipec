@@ -12,7 +12,27 @@ Once the dependencies are met, run
 
 in the root directory (which contains config.ru) to start the application.
 
+BUILDING
+
+This package can be built as a debian binary (a work in progress).
+
+Using vagrant ~> 1.7.2 and virtual box, issue the command:
+  vagrant up
+to bring up and provision a debian trusty x64 vm.
+
+Run the command
+  vagrant ssh -c "/vagrant/build.sh"
+to generate a .deb file in the apt cache directory /var/cache/apt/archives
+
 TODO
 
 * Need to decide on a way to differentiate inferred tags and explicit tags.
 * Need to exclude stop words and abbreviations.
+
+* Use thor or make to improve the command line interface / targets.
+* use guard to run thor/make when dependencies / fs files change.
+* copy back build artifacts to the vm's shared directory.
+* use anything smarter than shell scripts, and control builds with variables
+* add daemon start/stop script to run, halt, restart service.
+* create and use a www group (or www-data group) to restrict the service.
+* test installation with kitchen (add tests that install the deb and verify service)
