@@ -63,6 +63,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
     sudo apt-get install -y ruby-dev rsync
-    sudo gem install bundler:1.8.2 fpm:1.3.3 rubygems-update
+    sudo gem install rubygems-update
+	sudo gem install bundler -v 1.8.2
+    sudo gem install fpm -v 1.3.3
   SHELL
 end
