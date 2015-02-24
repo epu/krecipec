@@ -16,4 +16,4 @@ sudo /bin/bash -c 'cat /vagrant/unicorn.conf.rb | perl -pe "s:^(working_director
 # we flip it back to match the vagrant user.
 sudo chown -hR vagrant:vagrant /var/www/krecipec/1.0_hashref
 pushd /var/www/krecipec/1.0_hashref && bundle package
-sudo fpm -s dir -t deb -n "krecipec" -v 1.0 --provides krecipec --config-files /var/www/krecipec/1.0_hashref/unicorn.conf.rb -p /var/cache/apt/archives /var/www/krecipec/1.0_hashref
+sudo fpm -f -s dir -t deb -n "krecipec" -v 1.0 --provides krecipec --config-files /var/www/krecipec/1.0_hashref/unicorn.conf.rb -p /var/cache/apt/archives /var/www/krecipec/1.0_hashref
