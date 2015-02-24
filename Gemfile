@@ -4,7 +4,6 @@ source "https://rubygems.org"
 gem 'sinatra'
 gem 'rdiscount', '~> 2.1' # We installed 2.1.8.
 gem 'unicorn'
-gem 'fpm'
 
 #### one could specify these versions explicitly as dependencies.
 #### Probably safest for deployment. Or check in the Gemfile.lock, if working together in dev?
